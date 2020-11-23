@@ -1,18 +1,19 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { User } from '../components/User';
+import { Home } from './Home';
 
 function Main() {
     return (
-        <Fragment>
-            <User/>
-        </Fragment>
+        <div className="container">
+            <h1>This is the main component</h1>
+            <Home/>
+        </div>
     );
 }
 
 export default Main;
 
-
-ReactDOM.render(<Main />, document.getElementById('app'));
-
+if (document.getElementById('app')) {
+    ReactDOM.render(<Main />, document.getElementById('app'));
+}
