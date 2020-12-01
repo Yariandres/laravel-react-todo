@@ -1,1 +1,20 @@
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+
+.addItem {
+    width: 80%;
+    margin: 0 auto;
+
+
+}
+
+button {
+    .active {
+        background-color: #00ce25;
+    }
+
+    .inactive {
+        background-color: #999;
+    }
+}
+

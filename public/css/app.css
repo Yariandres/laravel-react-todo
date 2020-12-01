@@ -10903,3 +10903,16 @@ a.text-dark:focus {
   }
 }
 
+.addItem {
+  width: 80%;
+  margin: 0 auto;
+}
+
+button .active {
+  background-color: #00ce25;
+}
+
+button .inactive {
+  background-color: #999;
+}
+

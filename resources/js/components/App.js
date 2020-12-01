@@ -9,7 +9,7 @@ function App() {
     return (
         <div className="container">
             <div className="heading bg-info py-4 text-light">
-                <h1 className="display-5 text-center ">This is the App</h1>
+                <h1 className="display-5 text-center">Thing Todo</h1>
             </div>
 
             <AddItemForm/>
