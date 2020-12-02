@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { ListItem } from './ListItem';
 
 export const ListView = () => {
     return (
         <div>
-            This is the listView component
+            <ListItem/>
         </div>
     )
 }

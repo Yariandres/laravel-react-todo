@@ -1,24 +1,39 @@
 import React, { useState } from "react";
 
 export const AddItemForm = () => {
-    const [data, setData] = useState({
-        item: {
-            name: ""
-        }
-    });
+    const [item, setItem] = useState("");
+
+    const onChange = e => {
+        setItem({
+            item: {
+                name: e.target.value,
+                id: 22
+            }
+        });
+    };
+
+    const onClick = () => {
+
+        axios
+            .post("api/item/store", {item: item.item.name})
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
+    };
 
     return (
         <div className="addItem mt-5">
             <div className="input-group mb-3">
-                <input type="text" className="form-control" />
+                <input
+                    type="text"
+                    className="form-control"
+                    onChange={onChange}
+                    value={item.name}
+                />
                 <div className="input-group-append">
                     <button
-                        className={
-                            data.item.name
-                                ? "active"
-                                : "inactive"
-                        }
+                        className={item ? "btn btn-primary" : "d-none"}
                         type="button"
+                        onClick={onClick}
                     >
                         Add Item
                     </button>
