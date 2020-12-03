@@ -7,13 +7,11 @@ export const AddItemForm = () => {
         setItem({
             item: {
                 name: e.target.value,
-                id: 22
             }
         });
     };
 
     const onClick = () => {
-
         axios
             .post("api/item/store", {item: item.item.name})
             .then(res => console.log(res))

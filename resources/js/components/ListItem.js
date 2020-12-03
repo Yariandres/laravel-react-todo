@@ -1,9 +1,10 @@
 import React from 'react'
 
-export const ListItem = () => {
+export const ListItem = ({ items }) => {
     return (
-        <div>
-            This is the List Item component
+        <div className="text-center">
+            <p className="lead">{items}</p>
         </div>
+
     )
 }
