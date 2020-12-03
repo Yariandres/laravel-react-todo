@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 
-
-
 export const useFetch = url => {
 
     const [data, setData] = useState(null);
@@ -10,7 +8,6 @@ export const useFetch = url => {
     const getPords = () => fetch(url).then(res => res.json());
 
     useEffect(() => {
-
         getPords()
             .then(items => {
                 setData(items);
