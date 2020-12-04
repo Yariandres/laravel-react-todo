@@ -10916,3 +10916,8 @@ a.text-dark:focus {
   background-color: #999;
 }
 
+.item {
+  background-color: #e6e6e6;
+  display: inline-block;
+}
+
