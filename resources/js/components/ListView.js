@@ -11,7 +11,14 @@ export const ListView = () => {
             {loading ? (
                 <h1 className="display-3 text-center">Loading</h1>
             ) : (
-                data.map(items => <ListItem items={items.name} key={items.id}/>)
+                data.map(items => (
+
+                    <ListItem
+                        items={items.name}
+                        key={items.id}
+                        completed={items.completed}
+                    />
+                ))
             )}
         </Fragment>
     );

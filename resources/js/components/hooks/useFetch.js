@@ -1,20 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export const useFetch = url => {
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const getPords = () => fetch(url).then(res => res.json());
+    const getPords = useCallback( async () => {
+        const response = await fetch(url);
+        const data = await response.json();
+
+            setData(data);
+            setLoading(false);
+            console.log(data)
+        }, [])
 
     useEffect(() => {
-        getPords()
-            .then(items => {
-                setData(items);
-                setLoading(false);
-            });
-
-    }, []);
+        getPords();
+    },[getPords]);
 
     return { data, loading }
 }

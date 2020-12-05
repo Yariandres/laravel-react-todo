@@ -6,37 +6,37 @@ export const AddItemForm = () => {
     const onChange = e => {
         setItem({
             item: {
-                name: e.target.value,
+                name: e.target.value
             }
         });
     };
 
-    const onClick = () => {
+    const handleSubmit = () => {
         axios
-            .post("api/item/store", {item: item.item.name})
+            .post("api/item/store", { item: item.item.name })
             .then(res => console.log(res))
             .catch(err => console.log(err));
     };
 
     return (
         <div className="addItem mt-5">
-            <div className="input-group mb-3">
-                <input
-                    type="text"
-                    className="form-control"
-                    onChange={onChange}
-                    value={item.name}
-                />
-                <div className="input-group-append">
-                    <button
-                        className={item ? "btn btn-primary" : "d-none"}
-                        type="button"
-                        onClick={onClick}
-                    >
-                        Add Item
-                    </button>
+            <form onSubmit={handleSubmit}>
+                <div className="input-group mb-3">
+                    <input
+                        type="text"
+                        className="form-control"
+                        onChange={onChange}
+                        value={item.name}
+                    />
+                    <div className="input-group-append">
+                        <input
+                            className={item ? "btn btn-primary" : "d-none"}
+                            type="submit"
+                            value="Add Item"
+                        />
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     );
 };
