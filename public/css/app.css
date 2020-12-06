@@ -10917,6 +10917,13 @@ a.text-dark:focus {
 }
 
 .item {
-  background-color: #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #9999;
 }
 

@@ -66705,9 +66705,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _AddItemForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AddItemForm */ "./resources/js/components/AddItemForm.js");
-/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ListItem */ "./resources/js/components/ListItem.js");
-/* harmony import */ var _ListView__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ListView */ "./resources/js/components/ListView.js");
-
+/* harmony import */ var _ListView__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ListView */ "./resources/js/components/ListView.js");
 
 
 
@@ -66720,7 +66718,7 @@ function App() {
     className: "heading bg-info py-4 text-light"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "display-5 text-center"
-  }, "Thing Todo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddItemForm__WEBPACK_IMPORTED_MODULE_2__["AddItemForm"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_3__["ListItem"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ListView__WEBPACK_IMPORTED_MODULE_4__["ListView"], null));
+  }, "Thing Todo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddItemForm__WEBPACK_IMPORTED_MODULE_2__["AddItemForm"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ListView__WEBPACK_IMPORTED_MODULE_3__["ListView"], null));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -66728,31 +66726,6 @@ function App() {
 if (document.getElementById('app')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.getElementById('app'));
 }
-
-/***/ }),
-
-/***/ "./resources/js/components/ListItem.js":
-/*!*********************************************!*\
-  !*** ./resources/js/components/ListItem.js ***!
-  \*********************************************/
-/*! exports provided: ListItem */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListItem", function() { return ListItem; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-var ListItem = function ListItem(_ref) {
-  var items = _ref.items,
-      completed = _ref.completed;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "lead"
-  }, items), console.log(completed)));
-};
 
 /***/ }),
 
@@ -66769,24 +66742,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _hooks_useFetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hooks/useFetch */ "./resources/js/components/hooks/useFetch.js");
-/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ListItem */ "./resources/js/components/ListItem.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 /* eslint-disable react-hooks/exhaustive-deps */
 
-
+ // import { ListItem } from "./ListItem";
 
 var ListView = function ListView() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      state = _useState2[0],
+      setState = _useState2[1];
+
   var _useFetch = Object(_hooks_useFetch__WEBPACK_IMPORTED_MODULE_1__["useFetch"])("api/items"),
       data = _useFetch.data,
-      loading = _useFetch.loading;
+      loading = _useFetch.loading,
+      handleChange = _useFetch.handleChange;
+
+  var checkState = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
+
+  var editState = function editState(event) {
+    setState(event.target.checked);
+    handleChange(state);
+  };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "display-3 text-center"
   }, "Loading") : data.map(function (items) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_2__["ListItem"], {
-      items: items.name,
-      key: items.id,
-      completed: items.completed
-    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "item mb-3",
+      key: items.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      type: "checkbox",
+      ref: checkState,
+      className: "mr-2",
+      onChange: editState,
+      defaultChecked: false
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: items.completed ? "completed" : ""
+    }, items.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "btn btn-danger btn-sm ml-3"
+    }, "Remove"));
   }));
 };
 
@@ -66854,21 +66860,30 @@ var useFetch = function useFetch(url) {
             data = _context.sent;
             setData(data);
             setLoading(false);
-            console.log(data);
 
-          case 9:
+          case 8:
           case "end":
             return _context.stop();
         }
       }
     }, _callee);
   })), []);
+
+  var handleChange = function handleChange(id, checkboxSelectedState) {
+    axios.put("api/item/".concat(id)).then(function (response) {
+      return console.log(response);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     getPords();
-  }, [getPords]);
+  }, [getPords, handleChange]);
   return {
     data: data,
-    loading: loading
+    loading: loading,
+    handleChange: handleChange
   };
 };
 
